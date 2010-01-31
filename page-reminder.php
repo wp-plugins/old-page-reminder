@@ -2,14 +2,14 @@
 /**
  * @package Old Page Reminder
  * @author Brendan Nee - blinktag.com
- * @version 0.2
+ * @version 0.2.1
  */
 /*
 Plugin Name: Old Page Reminder
 Plugin URI: http://blinktag.com
 Description: Displays a reminder on the admin page to update posts
 Author: Brendan Nee
-Version: 0.2
+Version: 0.2.1
 Author URI: http://blinktag.com
 */
 
@@ -62,7 +62,7 @@ function oldpage_init($days=90)
 // action function for above hook
 function mt_add_pages() {
     // Add a new submenu under Options:
-    add_options_page('Page Reminder', 'Page Reminder', 'administrator', 'old-page-reminder', 'mt_options_page');
+    add_options_page('Old Page Reminder', 'Old Page Reminder', 'administrator', 'old-page-reminder', 'mt_options_page');
 }
 
 // mt_options_page() displays the page content for the Test Options submenu
@@ -136,7 +136,7 @@ function wp_dashboard_page_reminder ( ) {
 			
 				$url = get_edit_post_link( $page->ID );
 				$title = _draft_or_post_title( $page->ID );
-				$item = "<div style='clear:both'><img src='" . PAGE_REMINDER_PLUGINDIR_WEB . "/warning.gif' alt='warning' style='float:left;padding:4px 10px;' /><h4 style='float:left;padding:4px 0;'><a href='$url' title='" . sprintf( __( 'Edit "%s"' ), attribute_escape( $title ) ) . "'>$title</a> <abbr title='" . date(get_option( 'date_format' ),strtotime($page->post_modified)) . "'>" . date(get_option( 'date_format' ),strtotime($page->post_modified)) . '</abbr></h4></div>';
+				$item = "<div style='clear:both'><h4 style='float:left;padding:4px 0;'><a href='$url' title='" . sprintf( __( 'Edit "%s"' ), attribute_escape( $title ) ) . "'><img src='" . PAGE_REMINDER_PLUGINDIR_WEB . "/warning.gif' alt='warning' style='float:left;padding-right: 10px; width:16px;' /> $title</a></h4><div style='float:left;padding:4px 3px;'>" . date(get_option( 'date_format' ),strtotime($page->post_modified)) . '</div></div>';
 				if ( $the_content = preg_split( '#\s#', strip_tags( $page->post_content ), 11, PREG_SPLIT_NO_EMPTY ) )
 					$item .= '<p>' . join( ' ', array_slice( $the_content, 0, 10 ) ) . ( 10 < count( $the_content ) ? '&hellip;' : '' ) . '</p>';
 				$list[] = $item;
