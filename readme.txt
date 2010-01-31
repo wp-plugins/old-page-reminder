@@ -4,7 +4,7 @@ Donate link: http://blinktag.com
 Tags: dashboard, admin, reminder
 Requires at least: 2.7
 Tested up to: 2.9.1
-Stable tag: 0.2.1
+Stable tag: 0.3
 
 This plugin adds a box to the Wordpress admin dashboard that lists all pages that haven't been updated in 90 days.
 

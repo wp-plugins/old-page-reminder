@@ -2,14 +2,14 @@
 /**
  * @package Old Page Reminder
  * @author Brendan Nee - blinktag.com
- * @version 0.2.1
+ * @version 0.3
  */
 /*
 Plugin Name: Old Page Reminder
 Plugin URI: http://blinktag.com
 Description: Displays a reminder on the admin page to update posts
 Author: Brendan Nee
-Version: 0.2.1
+Version: 0.3
 Author URI: http://blinktag.com
 */
 
